@@ -19,6 +19,11 @@ class App extends Component {
       pastEntries: []
     }
   }
+
+  handleChange = ({ name, value }) => {
+    this.setState({ formInfo: {...this.state.formInfo, [name]: value } })
+  }
+
   render() {
     return(
       <div className="app-container">
@@ -35,7 +40,7 @@ class App extends Component {
                   </div>
                 </header>
                 <Nav />
-                <Form />
+                <Form formInfo={this.state.formInfo} handleChange={this.handleChange} />
               </main>
             )
           }}
