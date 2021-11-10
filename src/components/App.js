@@ -4,6 +4,7 @@ import Nav from './Nav'
 import Form from './Form'
 import Feedback from './Feedback'
 import PastEntryView from './PastEntryView'
+import { Route } from 'react-router-dom'
 
 class App extends Component {
   constructor() {
@@ -15,14 +16,24 @@ class App extends Component {
   render() {
     return(
       <div className="app-container">
-        <header className="app-header"> 
-          <div>
-            <h1>Say It Like You Mean It</h1>
-            <h3>Current View</h3>
-          </div>
-        </header>
-        <Nav />
-        <Form />
+        <Route
+          exact
+          path='/'
+          render={() => {
+            return (
+              <main>
+                <header className="app-header"> 
+                  <div>
+                    <h1>Say It Like You Mean It</h1>
+                    <h3>Current View</h3>
+                  </div>
+                </header>
+                <Nav />
+                <Form />
+              </main>
+            )
+          }}
+        />
         <Feedback /> 
         <PastEntryView />
       </div>
