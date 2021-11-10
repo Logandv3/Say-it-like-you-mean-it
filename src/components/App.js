@@ -16,23 +16,28 @@ class App extends Component {
         id: 0,
         flagged: false
       },
-      allEntries: []
+      allEntries: [],
+      currentEntry: {}
     }
   }
 
-  handleChange = ({ name, value }) => {
-    this.setState({ formInfo: {...this.state.formInfo, [name]: value } })
+  handleChange = async ({ name, value }) => {
+    await this.setState({ formInfo: {...this.state.formInfo, [name]: value } })
+    this.setState({ currentEntry: this.state.formInfo })
+    !this.state.formInfo.id && this.setState({ formInfo: {...this.state.formInfo, id: Date.now()} })
   }
 
-  handleSubmit = async (event) => {
-    event.preventDefault() 
-    const newEntry = this.state.allEntries.slice()
+  // handleClick = async (event) => {
+  //   event.preventDefault() 
+  //   const newEntry = this.state.allEntries.slice()
 
-    await this.setState({ formInfo: {...this.state.formInfo, id: Date.now()} })
-    newEntry.push(this.state.formInfo)
-    this.setState({ allEntries: newEntry })
-    this.setState({ formInfo: { title: '', content: '', id: 0, flagged: false}})
-  }
+  //   await this.setState({ formInfo: {...this.state.formInfo, id: Date.now()} })
+  //   newEntry.push(this.state.formInfo)
+  //   this.setState({ allEntries: newEntry, currentEntry: this.state.formInfo })
+  //   this.setState({ formInfo: { title: '', content: '', id: 0, flagged: false}})
+  //   console.log('I am the end of the click fcn')
+  //   return 'submit'
+  // }
 
   render() {
     return(
@@ -50,7 +55,7 @@ class App extends Component {
                   </div>
                 </header>
                 <Nav />
-                <Form formInfo={this.state.formInfo} onChange={this.handleChange} onSubmit={this.handleSubmit} />
+                <Form formInfo={this.state.formInfo} onChange={this.handleChange} currentEntry={this.state.currentEntry} />
               </main>
             )
           }}
@@ -59,10 +64,11 @@ class App extends Component {
         <Route
           exact
           path='/:id'
-          render={() => <Feedback />} />
+          render={() => <Feedback  /> }
+        />
         <Route
           exact
-          path='/:id'
+          path='/past-entry/:id'
           render={() => <PastEntryView />} />
         </Switch>
       </div>
@@ -70,4 +76,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App
