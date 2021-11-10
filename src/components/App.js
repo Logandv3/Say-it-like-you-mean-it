@@ -3,6 +3,7 @@ import '../styles/App.css'
 import Nav from './Nav'
 import Form from './Form'
 import Feedback from './Feedback'
+import PastEntryView from './PastEntryView'
 
 class App extends Component {
   constructor() {
@@ -18,10 +19,10 @@ class App extends Component {
           <h1>Say It Like You Mean It</h1>
           <h3>Current View</h3>
         </header>
-        {/* <Nav /> */}
+        <Nav />
         <Form />
         <Feedback /> 
-        
+        <PastEntryView />
       </div>
     )
   }
