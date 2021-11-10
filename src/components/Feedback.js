@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../styles/Feedback.css'
 
 
-const Feedback = () => {
+const Feedback = ({ addEntry }) => {
+  useEffect(() => {
+    addEntry()
+  }, [])
 
   return(
     <section className='feedback-container'>

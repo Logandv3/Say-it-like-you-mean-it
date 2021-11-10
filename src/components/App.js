@@ -27,17 +27,12 @@ class App extends Component {
     !this.state.formInfo.id && this.setState({ formInfo: {...this.state.formInfo, id: Date.now()} })
   }
 
-  // handleClick = async (event) => {
-  //   event.preventDefault() 
-  //   const newEntry = this.state.allEntries.slice()
-
-  //   await this.setState({ formInfo: {...this.state.formInfo, id: Date.now()} })
-  //   newEntry.push(this.state.formInfo)
-  //   this.setState({ allEntries: newEntry, currentEntry: this.state.formInfo })
-  //   this.setState({ formInfo: { title: '', content: '', id: 0, flagged: false}})
-  //   console.log('I am the end of the click fcn')
-  //   return 'submit'
-  // }
+  addNewEntry = () => {
+    const allEntriesUpdate = this.state.allEntries.slice()
+    allEntriesUpdate.push(this.state.currentEntry)
+    this.setState({ allEntries: allEntriesUpdate })
+    this.setState({ formInfo: {title: '', content: '', id: 0, flagged: false}, currentEntry: {} })
+  }
 
   render() {
     return(
@@ -64,7 +59,7 @@ class App extends Component {
         <Route
           exact
           path='/:id'
-          render={() => <Feedback  /> }
+          render={() => <Feedback addEntry={this.addNewEntry} currentEntry={this.state.currentEntry} /> }
         />
         <Route
           exact

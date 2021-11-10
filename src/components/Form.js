@@ -7,10 +7,10 @@ const Form = ({ formInfo, onChange, currentEntry }) => {
   let history = useHistory()
   
   return(
-    <form className='entry-form' onSubmit={() => history.push(`/${currentEntry.id}`)}>
+    <form className='entry-form'>
       <input type='text' placeholder='Enter title of content' name='title' onChange={(event) => onChange(event.target)} value={formInfo.title} />
       <input type='text' placeholder='Enter content you would like to analyze' name='content' onChange={(event) => onChange(event.target)} value={formInfo.content} />
-      <button type='submit' className='analyze-entry-btn'>Analyze</button>
+      <button type='button' className='analyze-entry-btn' onClick={() => history.push(`/${currentEntry.id}`)} >Analyze</button>
     </form>
   )
 }
