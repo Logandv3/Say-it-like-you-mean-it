@@ -13,10 +13,10 @@ class App extends Component {
       formInfo: {
         title: '',
         content: '',
-        id: 0
+        id: 0,
+        flagged: false
       },
-      currentEntry: {},
-      pastEntries: []
+      allEntries: []
     }
   }
 
@@ -25,10 +25,13 @@ class App extends Component {
   }
 
   handleSubmit = async (event) => {
-    event.preventDefault()
+    event.preventDefault() 
+    const newEntry = this.state.allEntries.slice()
 
     await this.setState({ formInfo: {...this.state.formInfo, id: Date.now()} })
-    this.setState({currentEntry: this.state.formInfo})
+    newEntry.push(this.state.formInfo)
+    this.setState({ allEntries: newEntry })
+    this.setState({ formInfo: { title: '', content: '', id: 0, flagged: false}})
   }
 
   render() {
