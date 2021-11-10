@@ -16,8 +16,10 @@ class App extends Component {
     return(
       <div className="app-container">
         <header className="app-header"> 
-          <h1>Say It Like You Mean It</h1>
-          <h3>Current View</h3>
+          <div>
+            <h1>Say It Like You Mean It</h1>
+            <h3>Current View</h3>
+          </div>
         </header>
         <Nav />
         <Form />
