@@ -4,7 +4,7 @@ import Nav from './Nav'
 import Form from './Form'
 import Feedback from './Feedback'
 import PastEntryView from './PastEntryView'
-import { Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 
 class App extends Component {
   constructor() {
@@ -34,8 +34,16 @@ class App extends Component {
             )
           }}
         />
-        <Feedback /> 
-        <PastEntryView />
+        <Switch>
+        <Route
+          exact
+          path='/:id'
+          render={() => <Feedback />} />
+        <Route
+          exact
+          path='/:id'
+          render={() => <PastEntryView />} />
+        </Switch>
       </div>
     )
   }
