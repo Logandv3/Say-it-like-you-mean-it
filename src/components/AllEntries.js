@@ -1,19 +1,13 @@
 import React from 'react'
 import '../styles/AllEntries.css'
-import Card from './Card'
+import PastEntryView from './PastEntryView'
 
 
 const AllEntries = () => {
 
   return(
     <section className='all-entries-container'>
-      <p>This is where all user entry cards will go</p>
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      <PastEntryView />
     </section>
   )
 }
