@@ -63,7 +63,7 @@ class App extends Component {
         />
         <Route
           exact
-          path='/past-entry/:id'
+          path='/past_entries/:name'
           render={() => <PastEntryView />} />
         </Switch>
       </div>
