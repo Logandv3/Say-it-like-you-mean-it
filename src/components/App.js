@@ -10,9 +10,30 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-
+      formInfo: {
+        title: '',
+        content: '',
+        id: 0,
+        flagged: false
+      },
+      allEntries: []
     }
   }
+
+  handleChange = ({ name, value }) => {
+    this.setState({ formInfo: {...this.state.formInfo, [name]: value } })
+  }
+
+  handleSubmit = async (event) => {
+    event.preventDefault() 
+    const newEntry = this.state.allEntries.slice()
+
+    await this.setState({ formInfo: {...this.state.formInfo, id: Date.now()} })
+    newEntry.push(this.state.formInfo)
+    this.setState({ allEntries: newEntry })
+    this.setState({ formInfo: { title: '', content: '', id: 0, flagged: false}})
+  }
+
   render() {
     return(
       <div className="app-container">
@@ -29,7 +50,7 @@ class App extends Component {
                   </div>
                 </header>
                 <Nav />
-                <Form />
+                <Form formInfo={this.state.formInfo} onChange={this.handleChange} onSubmit={this.handleSubmit} />
               </main>
             )
           }}
