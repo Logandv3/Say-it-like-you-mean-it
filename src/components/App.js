@@ -21,6 +21,7 @@ class App extends Component {
         {/* <Nav /> */}
         <Form />
         <Feedback /> 
+        
       </div>
     )
   }

@@ -1,16 +1,13 @@
 import React from 'react'
 import '../styles/FlaggedEntries.css'
-import Card from './Card'
+import PastEntryView from './PastEntryView'
 
 
 const FlaggedEntries = () => {
 
   return(
     <section className='flagged-entries-container'>
-      <p>This is where only flagged user entry cards will go</p>
-      <Card />
-      <Card />
-      <Card />
+      <PastEntryView />
     </section>
   )
 }
