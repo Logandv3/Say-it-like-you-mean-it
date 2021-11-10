@@ -1,14 +1,12 @@
 import React from 'react'
 import '../styles/Nav.css'
-import AllEntries from './AllEntries'
-import FlaggedEntries from './FlaggedEntries'
 
 const Nav = () => {
 
   return(
     <section>
-      <AllEntries />
-      <FlaggedEntries />
+      <h3>All Entries</h3>
+      <h3>Flagged Entries</h3>
     </section>
   )
 }
