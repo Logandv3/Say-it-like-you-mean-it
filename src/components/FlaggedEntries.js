@@ -6,7 +6,7 @@ const FlaggedEntries = () => {
 
   return(
     <section className='flagged-entries-container'>
-      <p>This is where all user entry cards will go</p>
+      <p>This is where only flagged user entry cards will go</p>
     </section>
   )
 }
