@@ -24,6 +24,13 @@ class App extends Component {
     this.setState({ formInfo: {...this.state.formInfo, [name]: value } })
   }
 
+  handleSubmit = async (event) => {
+    event.preventDefault()
+
+    await this.setState({ formInfo: {...this.state.formInfo, id: Date.now()} })
+    this.setState({currentEntry: this.state.formInfo})
+  }
+
   render() {
     return(
       <div className="app-container">
@@ -40,7 +47,7 @@ class App extends Component {
                   </div>
                 </header>
                 <Nav />
-                <Form formInfo={this.state.formInfo} handleChange={this.handleChange} />
+                <Form formInfo={this.state.formInfo} onChange={this.handleChange} onSubmit={this.handleSubmit} />
               </main>
             )
           }}
