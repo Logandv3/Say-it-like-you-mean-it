@@ -7,8 +7,8 @@ const Nav = () => {
 
   return(
     <section>
-      {/* <AllEntries />
-      <FlaggedEntries /> */}
+      <AllEntries />
+      <FlaggedEntries />
     </section>
   )
 }
