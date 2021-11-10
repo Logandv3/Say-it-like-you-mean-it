@@ -31,7 +31,11 @@ class App extends Component {
     const allEntriesUpdate = this.state.allEntries.slice()
     allEntriesUpdate.push(this.state.currentEntry)
     this.setState({ allEntries: allEntriesUpdate })
-    this.setState({ formInfo: {title: '', content: '', id: 0, flagged: false}, currentEntry: {} })
+    this.setState({ formInfo: {title: '', content: '', id: 0, flagged: false}})
+  }
+
+  clearCurrentEntry = () => {
+    this.setState({ currentEntry: {} })
   }
 
   render() {
@@ -59,7 +63,7 @@ class App extends Component {
         <Route
           exact
           path='/:id'
-          render={() => <Feedback addEntry={this.addNewEntry} currentEntry={this.state.currentEntry} /> }
+          render={() => <Feedback currentEntry={this.state.currentEntry} addEntry={this.addNewEntry} clearEntry={this.clearCurrentEntry} /> }
         />
         <Route
           exact

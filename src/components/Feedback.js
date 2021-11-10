@@ -1,15 +1,23 @@
 import React, { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import '../styles/Feedback.css'
 
 
-const Feedback = ({ addEntry }) => {
+const Feedback = ({ addEntry, clearEntry, currentEntry }) => {
   useEffect(() => {
     addEntry()
+    return() => {
+      clearEntry()
+    }
   }, [])
 
   return(
     <section className='feedback-container'>
-      <p>This is where the feedback will go</p>
+      <Link to='/'>
+        <h3 className='back-to-main-link'>--Back to Main Page</h3>
+      </Link>
+      <p>Title: {currentEntry.title}</p>
+      <p>Content: {currentEntry.content}</p>
     </section>
   )
 }

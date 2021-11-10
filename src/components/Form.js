@@ -5,8 +5,9 @@ import { useHistory } from 'react-router-dom'
 
 const Form = ({ formInfo, onChange, currentEntry }) => {
   let history = useHistory()
+  // console.log(history)
   let btnStatus = (formInfo.title && formInfo.content) ? false : true
-  
+
   return(
     <form className='entry-form'>
       <input type='text' placeholder='Enter title of content' name='title' onChange={(event) => onChange(event.target)} value={formInfo.title} />
