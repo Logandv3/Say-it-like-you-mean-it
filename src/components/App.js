@@ -10,7 +10,13 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-
+      formInfo: {
+        title: '',
+        content: '',
+        id: 0
+      },
+      currentEntry: {},
+      pastEntries: []
     }
   }
   render() {
