@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import './styles/App.css'
+import Nav from './Nav'
+import Form from './Form'
 import Feedback from './Feedback'
-import AllEntries from './AllEntries'
-import FlaggedEntries from './FlaggedEntries'
 
 class App extends Component {
   constructor() {
@@ -14,9 +14,11 @@ class App extends Component {
   render() {
     return (
       <div className="app-container">
-        <header className="app-header">
-          
+        <header className="app-header"> 
         </header>
+        <Nav />
+        <Form />
+        <Feedback /> 
       </div>
     )
   }
