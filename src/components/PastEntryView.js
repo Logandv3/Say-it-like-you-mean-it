@@ -3,17 +3,17 @@ import '../styles/PastEntryView.css'
 import Card from './Card'
 
 
-const PastEntryView = () => {
+const PastEntryView = ({ viewType, entries }) => {
+  let displayEntries = viewType === 'all' ? 
+  entries.map(entry => <Card title={entry.title} key={entry.id} />) : 
+  entries.filter((entry) => {
+    return !entry.flagged ? false : <Card title={entry.title} key={entry.id} />
+  })
 
   return(
-    <section className='all-entries-container'>
+    <section className='past-entries-view'>
       <p>This is where all user entry cards will go</p>
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      <div className='entries-container'>{displayEntries}</div>
     </section>
   )
 }

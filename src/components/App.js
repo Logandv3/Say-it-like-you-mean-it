@@ -64,7 +64,7 @@ class App extends Component {
         <Route
           exact
           path='/past_entries/:name'
-          render={() => <PastEntryView />} />
+          render={({ match }) => <PastEntryView viewType={match.params.name} entries={this.state.allEntries} />} />
         </Switch>
       </div>
     )

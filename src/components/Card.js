@@ -1,11 +1,11 @@
 import React from 'react'
 import '../styles/Card.css'
 
-const Card = () => {
+const Card = ({ title }) => {
 
   return(
     <section className='entry-card'>
-      <p>This is where info about a specific entry will go</p>
+      <p>{title}</p>
     </section>
   )
 }
