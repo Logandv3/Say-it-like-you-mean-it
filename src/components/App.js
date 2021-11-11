@@ -45,7 +45,7 @@ class App extends Component {
     this.setState({ currentEntry: 0 })
   }
 
-  cleanResponseData = (respData) => {
+  cleanResponseData = async (respData) => {
     const cleanedData = {
       primaryEmotion: respData.emotion_prediction,
       emotionRatings: {
@@ -61,7 +61,7 @@ class App extends Component {
         negativity: respData.sentiment_scores.Negative
       }
     }
-    this.setState({ currentEntry: {...this.state.currentEntry, entryAnalysis: cleanedData} })
+    await this.setState({ currentEntry: {...this.state.currentEntry, entryAnalysis: cleanedData} })
     return true
   }
 

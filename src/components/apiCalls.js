@@ -1,5 +1,5 @@
 export const submitEntry = (content, cleanResponse) => {
-  fetch("https://textprobe.p.rapidapi.com/feelings", {
+  return fetch("https://textprobe.p.rapidapi.com/feelings", {
     method: "POST",
     headers: {
     "content-type": "application/json",
