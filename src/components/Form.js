@@ -5,7 +5,6 @@ import { useHistory } from 'react-router-dom'
 
 const Form = ({ formInfo, onChange, currentEntry }) => {
   let history = useHistory()
-  // console.log(history)
   let btnStatus = (formInfo.title && formInfo.content) ? false : true
 
   return(

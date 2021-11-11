@@ -4,8 +4,9 @@ import '../styles/Feedback.css'
 
 
 const Feedback = ({ addEntry, clearEntry, currentEntry }) => {
+
   useEffect(() => {
-    addEntry()
+    addEntry(currentEntry.id)
     return() => {
       clearEntry()
     }

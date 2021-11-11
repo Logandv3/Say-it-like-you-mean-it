@@ -27,15 +27,22 @@ class App extends Component {
     !this.state.formInfo.id && this.setState({ formInfo: {...this.state.formInfo, id: Date.now()} })
   }
 
-  addNewEntry = () => {
-    const allEntriesUpdate = this.state.allEntries.slice()
+  addNewEntry = (id) => {
+    const allEntriesUpdate = this.state.allEntries.filter(entry => entry.id !== id)
     allEntriesUpdate.push(this.state.currentEntry)
+    
     this.setState({ allEntries: allEntriesUpdate })
     this.setState({ formInfo: {title: '', content: '', id: 0, flagged: false}})
   }
 
-  clearCurrentEntry = () => {
-    this.setState({ currentEntry: {} })
+  toggleCurrentEntry = (id) => {
+    if (!this.state.currentEntry) {
+      let clickedEntry = this.state.allEntries.filter(entry => entry.id === id)
+      this.setState({ currentEntry: clickedEntry[0] })
+      return true
+    }
+
+    this.setState({ currentEntry: 0 })
   }
 
   render() {
@@ -63,12 +70,12 @@ class App extends Component {
         <Route
           exact
           path='/:id'
-          render={() => <Feedback currentEntry={this.state.currentEntry} addEntry={this.addNewEntry} clearEntry={this.clearCurrentEntry} /> }
+          render={({ match }) => <Feedback currentEntry={this.state.currentEntry} addEntry={this.addNewEntry} clearEntry={this.toggleCurrentEntry} /> }
         />
         <Route
           exact
           path='/past_entries/:name'
-          render={({ match }) => <PastEntryView viewType={match.params.name} entries={this.state.allEntries} />} />
+          render={({ match }) => <PastEntryView viewType={match.params.name} entries={this.state.allEntries} toggleEntry={this.toggleCurrentEntry} />} />
         </Switch>
       </div>
     )

@@ -3,11 +3,12 @@ import '../styles/PastEntryView.css'
 import Card from './Card'
 
 
-const PastEntryView = ({ viewType, entries }) => {
+const PastEntryView = ({ viewType, entries, toggleEntry }) => {
+
   let displayEntries = viewType === 'all' ? 
-  entries.map(entry => <Card title={entry.title} key={entry.id} />) : 
+  entries.map(entry => <Card title={entry.title} key={entry.id} id={entry.id} addEntry={toggleEntry} />) : 
   entries.filter((entry) => {
-    return !entry.flagged ? false : <Card title={entry.title} key={entry.id} />
+    return !entry.flagged ? false : <Card title={entry.title} key={entry.id} id={entry.id} />
   })
 
   return(
