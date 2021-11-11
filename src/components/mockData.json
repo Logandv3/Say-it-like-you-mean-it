@@ -1,0 +1,76 @@
+{
+  "allEntries": [
+      {
+        "title": "Facebook",
+        "content": "Facebook is the worst!  I wish they would go away forever!",
+        "id": 1636605033145,
+        "flagged": false,
+        "entryAnalysis": {
+          "primaryEmotion": "Sadness",
+          "emotionRatings": {
+            "anger": 0.196282,
+            "fear": 0.113895,
+            "joy": 0.004697,
+            "neutral": 0.011911,
+            "sadness": 0.673216
+          },
+          "perceivedAs": "Negative",
+          "perceptionRatings": "{negativity: 1, positivity: 0}"
+        }
+      },
+      {
+        "title": "People",
+        "content": "People are the worst!  I wish they would go away forever!",
+        "id": 1636605033145,
+        "flagged": false,
+        "entryAnalysis": {
+          "primaryEmotion": "Sadness",
+          "emotionRatings": {
+            "anger": 0.196282,
+            "fear": 0.113895,
+            "joy": 0.004697,
+            "neutral": 0.011911,
+            "sadness": 0.673216
+          },
+          "perceivedAs": "Negative",
+          "perceptionRatings": "{negativity: 1, positivity: 0}"
+        }
+      },
+      {
+        "title": "Santa Claus",
+        "content": "Santa Claus is the worst!  I wish he would go away forever!",
+        "id": 1636605033145,
+        "flagged": false,
+        "entryAnalysis": {
+          "primaryEmotion": "Sadness",
+          "emotionRatings": {
+            "anger": 0.196282,
+            "fear": 0.113895,
+            "joy": 0.004697,
+            "neutral": 0.011911,
+            "sadness": 0.673216
+          },
+          "perceivedAs": "Negative",
+          "perceptionRatings": "{negativity: 1, positivity: 0}"
+        }
+      },
+      {
+        "title": "Peruvian food",
+        "content": "Peruvian food is the best!  I wish I could have it once a day!",
+        "id": 1636605033145,
+        "flagged": false,
+        "entryAnalysis": {
+          "primaryEmotion": "joy",
+          "emotionRatings": {
+            "anger": 0.00012,
+            "fear": 0.000001,
+            "joy": 0.928387,
+            "neutral": 0.011911,
+            "sadness": 0.48382
+          },
+          "perceivedAs": "Positive",
+          "perceptionRatings": "{negativity: 0, positivity: 1}"
+        }
+      }
+    ]
+}
