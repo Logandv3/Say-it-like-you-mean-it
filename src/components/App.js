@@ -45,6 +45,26 @@ class App extends Component {
     this.setState({ currentEntry: 0 })
   }
 
+  cleanResponseData = async (respData) => {
+    const cleanedData = {
+      primaryEmotion: respData.emotion_prediction,
+      emotionRatings: {
+        anger: respData.emotion_scores.Anger,
+        fear: respData.emotion_scores.Fear,
+        joy: respData.emotion_scores.Joy,
+        neutral: respData.emotion_scores.Neutral,
+        sadness: respData.emotion_scores.Sadness,
+      },
+      perceivedAs: respData.sentiment_prediction,
+      perceptionRatings: {
+        positivity: respData.sentiment_scores.Positive,
+        negativity: respData.sentiment_scores.Negative
+      }
+    }
+    await this.setState({ currentEntry: {...this.state.currentEntry, entryAnalysis: cleanedData} })
+    return true
+  }
+
   render() {
     return(
       <div className="app-container">
@@ -61,7 +81,7 @@ class App extends Component {
                   </div>
                 </header>
                 <Nav />
-                <Form formInfo={this.state.formInfo} onChange={this.handleChange} currentEntry={this.state.currentEntry} />
+                <Form formInfo={this.state.formInfo} onChange={this.handleChange} currentEntry={this.state.currentEntry} cleanResponse={this.cleanResponseData} />
               </main>
             )
           }}
@@ -70,7 +90,7 @@ class App extends Component {
         <Route
           exact
           path='/:id'
-          render={({ match }) => <Feedback currentEntry={this.state.currentEntry} addEntry={this.addNewEntry} clearEntry={this.toggleCurrentEntry} /> }
+          render={() => <Feedback currentEntry={this.state.currentEntry} addEntry={this.addNewEntry} clearEntry={this.toggleCurrentEntry} /> }
         />
         <Route
           exact

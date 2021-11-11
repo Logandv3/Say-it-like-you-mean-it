@@ -19,6 +19,7 @@ const Feedback = ({ addEntry, clearEntry, currentEntry }) => {
       </Link>
       <p>Title: {currentEntry.title}</p>
       <p>Content: {currentEntry.content}</p>
+      
     </section>
   )
 }
