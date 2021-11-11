@@ -16,22 +16,33 @@ class App extends Component {
         id: 0,
         flagged: false
       },
-      allEntries: []
+      allEntries: [],
+      currentEntry: {}
     }
   }
 
-  handleChange = ({ name, value }) => {
-    this.setState({ formInfo: {...this.state.formInfo, [name]: value } })
+  handleChange = async ({ name, value }) => {
+    await this.setState({ formInfo: {...this.state.formInfo, [name]: value } })
+    this.setState({ currentEntry: this.state.formInfo })
+    !this.state.formInfo.id && this.setState({ formInfo: {...this.state.formInfo, id: Date.now()} })
   }
 
-  handleSubmit = async (event) => {
-    event.preventDefault() 
-    const newEntry = this.state.allEntries.slice()
+  addNewEntry = (id) => {
+    const allEntriesUpdate = this.state.allEntries.filter(entry => entry.id !== id)
+    allEntriesUpdate.push(this.state.currentEntry)
+    
+    this.setState({ allEntries: allEntriesUpdate })
+    this.setState({ formInfo: {title: '', content: '', id: 0, flagged: false}})
+  }
 
-    await this.setState({ formInfo: {...this.state.formInfo, id: Date.now()} })
-    newEntry.push(this.state.formInfo)
-    this.setState({ allEntries: newEntry })
-    this.setState({ formInfo: { title: '', content: '', id: 0, flagged: false}})
+  toggleCurrentEntry = (id) => {
+    if (!this.state.currentEntry) {
+      let clickedEntry = this.state.allEntries.filter(entry => entry.id === id)
+      this.setState({ currentEntry: clickedEntry[0] })
+      return true
+    }
+
+    this.setState({ currentEntry: 0 })
   }
 
   render() {
@@ -50,7 +61,7 @@ class App extends Component {
                   </div>
                 </header>
                 <Nav />
-                <Form formInfo={this.state.formInfo} onChange={this.handleChange} onSubmit={this.handleSubmit} />
+                <Form formInfo={this.state.formInfo} onChange={this.handleChange} currentEntry={this.state.currentEntry} />
               </main>
             )
           }}
@@ -59,15 +70,16 @@ class App extends Component {
         <Route
           exact
           path='/:id'
-          render={() => <Feedback />} />
+          render={({ match }) => <Feedback currentEntry={this.state.currentEntry} addEntry={this.addNewEntry} clearEntry={this.toggleCurrentEntry} /> }
+        />
         <Route
           exact
-          path='/:id'
-          render={() => <PastEntryView />} />
+          path='/past_entries/:name'
+          render={({ match }) => <PastEntryView viewType={match.params.name} entries={this.state.allEntries} toggleEntry={this.toggleCurrentEntry} />} />
         </Switch>
       </div>
     )
   }
 }
 
-export default App;
+export default App

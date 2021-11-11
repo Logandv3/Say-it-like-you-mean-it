@@ -1,11 +1,14 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 import '../styles/Card.css'
 
-const Card = () => {
+
+const Card = ({ title, id, addEntry }) => {
+  let history = useHistory()
 
   return(
-    <section className='entry-card'>
-      <p>This is where info about a specific entry will go</p>
+    <section className='entry-card' key={id} onClick={() => addEntry(id) && history.push(`/${id}`)} >
+      <p>{title}</p>
     </section>
   )
 }
