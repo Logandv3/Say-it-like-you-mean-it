@@ -1,0 +1,51 @@
+.feedback-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80vh;
+  border: 2px solid gold;
+}
+
+.feedback-header {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  border: 2px solid gold;
+}
+
+.entry-title {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.entry-content {
+  font-size: 1em;
+}
+
+.analysis-container {
+  display: flex;
+  justify-content: space-around;
+  border: 2px solid gold;
+}
+
+.entry-content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.perception-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 2px solid gold;
+  height: 50%;
+}
+
+.emotion-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 2px solid gold;
+}
