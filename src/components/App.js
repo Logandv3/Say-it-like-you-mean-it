@@ -17,7 +17,8 @@ class App extends Component {
         flagged: false
       },
       allEntries: [],
-      currentEntry: {}
+      currentEntry: {},
+      navWidth: '0%'
     }
   }
 
@@ -43,6 +44,10 @@ class App extends Component {
     }
 
     this.setState({ currentEntry: 0 })
+  }
+
+  toggleNavBar = ({ name }) => {
+    name === 'open-nav' ? this.setState({ navWidth: '15%' }) : this.setState({ navWidth: '0%' })
   }
 
   cleanResponseData = async (respData) => {
@@ -74,7 +79,8 @@ class App extends Component {
               <h1>Say It Like You Mean It</h1>
             </div>
             {/* <h3>Current View</h3> */}
-            <Nav />
+            <button name='open-nav' onClick={(event) => this.toggleNavBar(event.target)}>Open</button>
+            <Nav wid={this.state.navWidth} closeNav={this.toggleNavBar} />
           </header>
           <Route
             exact
