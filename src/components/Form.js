@@ -10,8 +10,8 @@ const Form = ({ formInfo, onChange, currentEntry, cleanResponse }) => {
 
   return(
     <form className='entry-form'>
-      <input type='text' placeholder='Enter title of content' name='title' onChange={(event) => onChange(event.target)} value={formInfo.title} />
-      <input type='text' placeholder='Enter content you would like to analyze' name='content' onChange={(event) => onChange(event.target)} value={formInfo.content} />
+      <input className='title-input' type='text' placeholder='Enter title of content' name='title' onChange={(event) => onChange(event.target)} value={formInfo.title} />
+      <input className='content-input' type='text' placeholder='Enter content you would like to analyze' name='content' onChange={(event) => onChange(event.target)} value={formInfo.content} />
       <button type='button' disabled={btnStatus} className='analyze-entry-btn' onClick={async () => await submitEntry(currentEntry.content, cleanResponse) && history.push(`/${currentEntry.id}`)}>Analyze</button>
     </form>
   )

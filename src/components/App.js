@@ -68,24 +68,24 @@ class App extends Component {
   render() {
     return(
       <div className="app-container">
-        <Route
-          exact
-          path='/'
-          render={() => {
-            return (
-              <main>
-                <header className="app-header"> 
-                  <div>
-                    <h1>Say It Like You Mean It</h1>
-                    <h3>Current View</h3>
-                  </div>
-                </header>
-                <Nav />
-                <Form formInfo={this.state.formInfo} onChange={this.handleChange} currentEntry={this.state.currentEntry} cleanResponse={this.cleanResponseData} />
-              </main>
-            )
-          }}
-        />
+        <main className='main-content'>
+          <header className="app-header"> 
+            <div className='app-title'>
+              <h1>Say It Like You Mean It</h1>
+            </div>
+            {/* <h3>Current View</h3> */}
+            <Nav />
+          </header>
+          <Route
+            exact
+            path='/'
+            render={() => {
+              return (
+                  <Form formInfo={this.state.formInfo} onChange={this.handleChange} currentEntry={this.state.currentEntry} cleanResponse={this.cleanResponseData} />
+              )
+            }}
+          />
+        </main>
         <Switch>
         <Route
           exact
