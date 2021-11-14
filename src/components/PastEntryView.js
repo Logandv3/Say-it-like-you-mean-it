@@ -4,12 +4,12 @@ import '../styles/PastEntryView.css'
 import Card from './Card'
 
 
-const PastEntryView = ({ viewType, entries, toggleEntry }) => {
+const PastEntryView = ({ viewType, entries, toggleEntry, toggleFlag }) => {
 
   let displayEntries = viewType === 'all' ? 
-  entries.map(entry => <Card title={entry.title} emotion={entry.entryAnalysis.primaryEmotion} perception={entry.entryAnalysis.perceivedAs} key={entry.id} id={entry.id} addEntry={toggleEntry} />) : 
+  entries.map(entry => <Card title={entry.title} emotion={entry.entryAnalysis.primaryEmotion} perception={entry.entryAnalysis.perceivedAs} flagged={entry.flagged} key={entry.id} id={entry.id} addEntry={toggleEntry} flagToggle={toggleFlag} />) : 
   entries.filter((entry) => {
-    return !entry.flagged ? false : <Card title={entry.title} emotion={entry.entryAnalysis.primaryEmotion} perception={entry.entryAnalysis.perceivedAs} key={entry.id} id={entry.id} />
+    return !entry.flagged ? false : <Card title={entry.title} emotion={entry.entryAnalysis.primaryEmotion} perception={entry.entryAnalysis.perceivedAs} flagged={entry.flagged} key={entry.id} id={entry.id} flagToggle={toggleFlag} />
   })
 
   const viewTitle = viewType === 'all' ? 'All Entries' : 'Flagged Entries'

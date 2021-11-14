@@ -50,6 +50,21 @@ class App extends Component {
     name === 'open-nav' ? this.setState({ navWidth: '15%' }) : this.setState({ navWidth: '0%' })
   }
 
+  toggleFlag = (id, flagged) => {
+    console.log(id)
+    console.log(flagged)
+    const changeTo = !flagged ? 'true' : false
+    const entriesCopy = this.state.allEntries.map((entry) => {
+      if (id === entry.id) {
+        entry.flagged = changeTo
+        console.log('id matches')
+      }
+      return entry
+    })
+    console.log(entriesCopy)
+    this.setState({ allEntries: entriesCopy })
+  }
+
   cleanResponseData = async (respData) => {
     const cleanedData = {
       primaryEmotion: respData.emotion_prediction,
@@ -101,7 +116,7 @@ class App extends Component {
         <Route
           exact
           path='/past_entries/:name'
-          render={({ match }) => <PastEntryView viewType={match.params.name} entries={this.state.allEntries} toggleEntry={this.toggleCurrentEntry} />} />
+          render={({ match }) => <PastEntryView viewType={match.params.name} entries={this.state.allEntries} toggleEntry={this.toggleCurrentEntry} toggleFlag={this.toggleFlag} />} />
         </Switch>
       </div>
     )
