@@ -8,9 +8,9 @@ const Card = ({ title, emotion, perception, id, addEntry }) => {
 
   return(
     <section className='entry-card' key={id} onClick={() => addEntry(id) && history.push(`/${id}`)} >
-      <p>{title}</p>
-      <p>{emotion}</p>
-      <p>{perception}</p>
+      <h3>{title}</h3>
+      <p>Primary Emotion: {emotion}</p>
+      <p>Perceived As: {perception}</p>
     </section>
   )
 }
