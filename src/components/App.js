@@ -50,15 +50,28 @@ class App extends Component {
     name === 'open-nav' ? this.setState({ navWidth: '15%' }) : this.setState({ navWidth: '0%' })
   }
 
+  toggleFlag = (id, flagged) => {
+    const changeTo = !flagged ? 'true' : false
+    const entriesCopy = this.state.allEntries.map((entry) => {
+      if (id === entry.id) {
+        entry.flagged = changeTo
+      }
+
+      return entry
+    })
+
+    this.setState({ allEntries: entriesCopy })
+  }
+
   cleanResponseData = async (respData) => {
     const cleanedData = {
       primaryEmotion: respData.emotion_prediction,
       emotionRatings: {
-        anger: respData.emotion_scores.Anger,
-        fear: respData.emotion_scores.Fear,
-        joy: respData.emotion_scores.Joy,
-        neutral: respData.emotion_scores.Neutral,
-        sadness: respData.emotion_scores.Sadness,
+        anger: `${(respData.emotion_scores.Anger * 100).toFixed(1)}%`,
+        fear: `${(respData.emotion_scores.Fear * 100).toFixed(1)}%`,
+        joy: `${(respData.emotion_scores.Joy * 100).toFixed(1)}%`,
+        neutral: `${(respData.emotion_scores.Neutral * 100).toFixed(1)}%`,
+        sadness: `${(respData.emotion_scores.Sadness * 100).toFixed(1)}%`,
       },
       perceivedAs: respData.sentiment_prediction,
       perceptionRatings: {
@@ -101,7 +114,7 @@ class App extends Component {
         <Route
           exact
           path='/past_entries/:name'
-          render={({ match }) => <PastEntryView viewType={match.params.name} entries={this.state.allEntries} toggleEntry={this.toggleCurrentEntry} />} />
+          render={({ match }) => <PastEntryView viewType={match.params.name} entries={this.state.allEntries} toggleEntry={this.toggleCurrentEntry} toggleFlag={this.toggleFlag} />} />
         </Switch>
       </div>
     )
