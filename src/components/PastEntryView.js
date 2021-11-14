@@ -5,12 +5,24 @@ import Card from './Card'
 
 
 const PastEntryView = ({ viewType, entries, toggleEntry, toggleFlag }) => {
+  let displayEntries;
 
-  let displayEntries = viewType === 'all' ? 
-  entries.map(entry => <Card title={entry.title} emotion={entry.entryAnalysis.primaryEmotion} perception={entry.entryAnalysis.perceivedAs} flagged={entry.flagged} key={entry.id} id={entry.id} addEntry={toggleEntry} flagToggle={toggleFlag} />) : 
-  entries.filter((entry) => {
-    return !entry.flagged ? false : <Card title={entry.title} emotion={entry.entryAnalysis.primaryEmotion} perception={entry.entryAnalysis.perceivedAs} flagged={entry.flagged} key={entry.id} id={entry.id} flagToggle={toggleFlag} />
-  })
+  if (viewType === 'all') {
+    displayEntries = entries.map((entry) => {
+      return <Card title={entry.title} emotion={entry.entryAnalysis.primaryEmotion} perception={entry.entryAnalysis.perceivedAs} flagged={entry.flagged} key={entry.id} id={entry.id} addEntry={toggleEntry} flagToggle={toggleFlag} />
+    })
+
+  } else if (viewType !== 'all') {
+    let filteredDisplayEntries = entries.filter((entry) => {
+      if (entry.flagged) {
+        return <Card title={entry.title} emotion={entry.entryAnalysis.primaryEmotion} perception={entry.entryAnalysis.perceivedAs} flagged={entry.flagged} key={entry.id} id={entry.id} addEntry={toggleEntry} flagToggle={toggleFlag} />
+      }
+      return false
+    })
+    displayEntries = filteredDisplayEntries.map((entry) => {
+      return <Card title={entry.title} emotion={entry.entryAnalysis.primaryEmotion} perception={entry.entryAnalysis.perceivedAs} flagged={entry.flagged} key={entry.id} id={entry.id} addEntry={toggleEntry} flagToggle={toggleFlag} />
+    })
+  }
 
   const viewTitle = viewType === 'all' ? 'All Entries' : 'Flagged Entries'
 

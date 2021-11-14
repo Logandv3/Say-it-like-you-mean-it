@@ -51,17 +51,15 @@ class App extends Component {
   }
 
   toggleFlag = (id, flagged) => {
-    console.log(id)
-    console.log(flagged)
     const changeTo = !flagged ? 'true' : false
     const entriesCopy = this.state.allEntries.map((entry) => {
       if (id === entry.id) {
         entry.flagged = changeTo
-        console.log('id matches')
       }
+
       return entry
     })
-    console.log(entriesCopy)
+
     this.setState({ allEntries: entriesCopy })
   }
 
