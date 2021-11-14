@@ -19,6 +19,7 @@ const PastEntryView = ({ viewType, entries, toggleEntry, toggleFlag }) => {
       }
       return false
     })
+    
     displayEntries = filteredDisplayEntries.map((entry) => {
       return <Card title={entry.title} emotion={entry.entryAnalysis.primaryEmotion} perception={entry.entryAnalysis.perceivedAs} flagged={entry.flagged} key={entry.id} id={entry.id} addEntry={toggleEntry} flagToggle={toggleFlag} />
     })

@@ -67,11 +67,11 @@ class App extends Component {
     const cleanedData = {
       primaryEmotion: respData.emotion_prediction,
       emotionRatings: {
-        anger: respData.emotion_scores.Anger,
-        fear: respData.emotion_scores.Fear,
-        joy: respData.emotion_scores.Joy,
-        neutral: respData.emotion_scores.Neutral,
-        sadness: respData.emotion_scores.Sadness,
+        anger: `${(respData.emotion_scores.Anger * 100).toFixed(1)}%`,
+        fear: `${(respData.emotion_scores.Fear * 100).toFixed(1)}%`,
+        joy: `${(respData.emotion_scores.Joy * 100).toFixed(1)}%`,
+        neutral: `${(respData.emotion_scores.Neutral * 100).toFixed(1)}%`,
+        sadness: `${(respData.emotion_scores.Sadness * 100).toFixed(1)}%`,
       },
       perceivedAs: respData.sentiment_prediction,
       perceptionRatings: {
