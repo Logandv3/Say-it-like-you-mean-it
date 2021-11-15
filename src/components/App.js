@@ -89,10 +89,10 @@ class App extends Component {
         <main className='main-content'>
           <header className="app-header"> 
             <div className='app-title'>
-              <h1>Say It Like You Mean It</h1>
+              <h1 className='header-title'>Say It Like You Mean It</h1>
             </div>
             {/* <h3>Current View</h3> */}
-            <button name='open-nav' onClick={(event) => this.toggleNavBar(event.target)}>Open</button>
+            <button className='open-nav-btn' name='open-nav' onClick={(event) => this.toggleNavBar(event.target)}>Open</button>
             <Nav wid={this.state.navWidth} closeNav={this.toggleNavBar} />
           </header>
           <Route

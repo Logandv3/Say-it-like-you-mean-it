@@ -1,5 +1,36 @@
+html {
+  background-color: rgb(4, 13, 27);
+}
+
+.app-container {
+  background-color: rgb(4, 13, 27);
+}
+
+
+.header-title {
+  font-size: 3.4em;
+  margin-top: 0.25em;
+  margin-bottom: 0.2em;
+  margin-left: 0.4em;
+  width: fit-content;
+  padding-right: 0.5em;
+  border-bottom: 2px solid rgb(197, 107, 107);
+}
+
 .main-content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.app-header {
+  color: rgb(185, 218, 255);
+}
+
+.open-nav-btn {
+  color: rgb(31, 39, 32);
+  border-radius: 0.5em;
+  width: 4%;
+  height: 35%;
+  margin-left: 0.5%;
 }

@@ -11,15 +11,32 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  width: 100%;
+  width: 60%;
   height: 100%;
   margin-top: 10%;
+  border: 2px solid rgb(143, 78, 78);
+  background-color: rgb(129, 133, 130);
+  border-radius: 0.5em;
 }
 
 .title-input {
   width: 20%;
+  height: 10%;
+  background-color: rgb(185, 218, 255);
+  border-radius: 0.8em;
 }
 
 .content-input {
   width: 30%;
+  height: 10%;
+  background-color: rgb(185, 218, 255);
+  border-radius: 0.8em;
+}
+
+.analyze-entry-btn {
+  background-color: rgb(31, 39, 32);
+  border-radius: 0.5em;
+  width: 10%;
+  height: 10%;
+  color: white;
 }
