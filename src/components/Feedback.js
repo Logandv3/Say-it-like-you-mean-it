@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import '../styles/Feedback.css'
 
 
@@ -45,3 +46,9 @@ const Feedback = ({ addEntry, clearEntry, currentEntry }) => {
 }
 
 export default Feedback
+
+Feedback.propTypes = {
+  addEntry: PropTypes.func.isRequired,
+  clearEntry: PropTypes.func.isRequired,
+  currentEntry: PropTypes.object.isRequired
+}
