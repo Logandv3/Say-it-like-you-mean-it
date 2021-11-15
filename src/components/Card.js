@@ -1,5 +1,6 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import '../styles/Card.css'
 
 
@@ -22,3 +23,13 @@ const Card = ({ title, emotion, perception, addEntry, flagToggle, id, flagged })
 }
 
 export default Card
+
+Card.propTypes = {
+  title: PropTypes.string.isRequired,
+  emotion: PropTypes.string.isRequired,
+  perception: PropTypes.string.isRequired,
+  addEntry: PropTypes.func.isRequired,
+  flagToggle: PropTypes.func.isRequired,
+  id: PropTypes.number.isRequired,
+  flagged: PropTypes.bool.isRequired
+}
