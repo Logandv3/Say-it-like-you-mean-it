@@ -10,7 +10,7 @@ const Card = ({ title, emotion, perception, addEntry, flagToggle, id, flagged })
   return(
     <section className='entry-card' key={id} >
       <header className='card-header'>
-        <h3>{title}</h3>
+        <h3 className='card-entry-title'>{title}</h3>
         <button type='button' className='flag-button' onClick={() => flagToggle(id, flagged)} >{flagStatus}</button>
       </header>
       <div className='card-details' onClick={() => addEntry(id) && history.push(`/${id}`)}>

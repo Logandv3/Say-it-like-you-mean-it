@@ -8,7 +8,13 @@
 .card-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1em;
+  grid-gap: 3em;
   margin: 1.5em;
   width: 95%;
+}
+
+.view-title {
+  color: white;
+  margin: 0.25em;
+  font-size: 2.5em;
 }

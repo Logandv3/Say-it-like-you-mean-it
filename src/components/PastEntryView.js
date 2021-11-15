@@ -33,7 +33,7 @@ const PastEntryView = ({ viewType, entries, toggleEntry, toggleFlag }) => {
         <h3 className='back-to-main-link'>--Back to Main Page</h3>
       </Link>
       <section className='entries-container'>
-        <h2>{viewTitle}</h2>
+        <h2 className='view-title' >{viewTitle}</h2>
         <div className='card-container'>{displayEntries}</div>
       </section>
     </section>

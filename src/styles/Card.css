@@ -3,7 +3,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid gold;
+  border: 1px solid rgb(143, 78, 78);
+  padding: 0.25em;
+  background-color: rgb(132, 163, 197);
+  border-radius: 0.5em;
 }
 
 .card-header {
@@ -11,13 +14,23 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  border-bottom: 1px solid rgb(4, 13, 27);
+}
+
+.card-entry-title {
+  color: rgb(4, 13, 27);
+  font-size: 1.5em;
+  margin: 0%;
 }
 
 .flag-button {
-  height: 40%;
+  height: 80%;
+  border-radius: 0.5em;
 }
 
 .card-details {
   height: 100%;
   width: 100%;
+  color: rgb(4, 13, 27);
+  font-weight: bold;
 }
