@@ -1,6 +1,7 @@
 import React from 'react'
 import '../styles/Form.css'
 import { useHistory } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import { submitEntry } from './apiCalls'
 
 
@@ -20,3 +21,10 @@ const Form = ({ formInfo, onChange, currentEntry, cleanResponse }) => {
 }
 
 export default Form
+
+Form.propTypes = {
+  formInfo: PropTypes.object.isRequired,
+  onChange: PropTypes.func.isRequired,
+  currentEntry: PropTypes.object.isRequired,
+  cleanResponse: PropTypes.func.isRequired,
+}
