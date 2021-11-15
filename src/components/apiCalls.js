@@ -16,3 +16,27 @@ export const submitEntry = (content, cleanResponse) => {
     console.error(err);
   })
 }
+
+export const getAllEntries = () => {
+  return fetch("https://say-it-like-you-mean-it-api.herokuapp.com/entries")
+  .then(response => response.json())
+  .then(data => data.entriesObj )
+  .catch(error => console.log(error))
+}
+
+export const postEntry = (entry) => {
+  return fetch("https://say-it-like-you-mean-it-api.herokuapp.com/entries", {
+    method: "POST",
+    headers: {"content-type": "application/json"},
+    body: JSON.stringify({
+      id: entry.id,
+      title: entry.title,
+      content: entry.content,
+      flagged: entry.flagged,
+      entry_analysis: entry.entryAnalysis
+    })
+  })
+  .then(response => response.json())
+  .then(data => data)
+  .catch(error => console.log(error))
+}
