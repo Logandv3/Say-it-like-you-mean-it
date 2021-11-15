@@ -6,7 +6,7 @@ const Nav = ({ wid, closeNav }) => {
 
   return(
     <section className='navigation-container' style={{width: wid }} >
-    <button name='close-nav' onClick={(event) => closeNav(event.target)}>Close</button>
+    <button className='close-nav-btn' name='close-nav' onClick={(event) => closeNav(event.target)}>Close</button>
       <NavLink to={`/past_entries/all`} >
         <h3 className='all-entries-link' name='all' onClick={(event) => closeNav(event.target)}>All Entries</h3>
       </NavLink>

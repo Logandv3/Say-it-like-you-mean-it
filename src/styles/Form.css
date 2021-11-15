@@ -31,3 +31,11 @@
   background-color: rgb(185, 218, 255);
   border-radius: 0.8em;
 }
+
+.analyze-entry-btn {
+  background-color: rgb(31, 39, 32);
+  border-radius: 0.5em;
+  width: 10%;
+  height: 10%;
+  color: white;
+}
