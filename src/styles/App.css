@@ -1,5 +1,17 @@
+html {
+  background-color: rgb(31, 39, 32);
+}
+
+.app-container {
+  background-color: rgb(31, 39, 32);
+}
+
 .main-content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.app-header {
+  color: rgb(185, 218, 255);
 }
