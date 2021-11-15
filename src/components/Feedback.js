@@ -27,7 +27,7 @@ const Feedback = ({ addEntry, clearEntry, currentEntry }) => {
       </div>
       <div className='analysis-container'>
         <div className='emotion-container'>
-          <p>Primary Emotion: {currentEntry.entryAnalysis.primaryEmotion}</p>
+          <p className='primary-emotion'>Primary Emotion: {currentEntry.entryAnalysis.primaryEmotion}</p>
           <p>Anger: {currentEntry.entryAnalysis.emotionRatings.anger}</p>
           <p>Fear: {currentEntry.entryAnalysis.emotionRatings.fear}</p>
           <p>Joy: {currentEntry.entryAnalysis.emotionRatings.joy}</p>
@@ -35,7 +35,7 @@ const Feedback = ({ addEntry, clearEntry, currentEntry }) => {
           <p>Sadness: {currentEntry.entryAnalysis.emotionRatings.sadness}</p>
         </div>
         <div className='perception-container'>
-          <p>Message Undertone: {currentEntry.entryAnalysis.perceivedAs}</p>
+          <p className='message-undertone'>Message Undertone: {currentEntry.entryAnalysis.perceivedAs}</p>
           <p>Negativity: {currentEntry.entryAnalysis.perceptionRatings.negativity}</p>
           <p>Positivity: {currentEntry.entryAnalysis.perceptionRatings.positivity}</p>
         </div>
