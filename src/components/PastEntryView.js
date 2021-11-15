@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import '../styles/PastEntryView.css'
 import Card from './Card'
 
@@ -41,3 +42,10 @@ const PastEntryView = ({ viewType, entries, toggleEntry, toggleFlag }) => {
 }
 
 export default PastEntryView
+
+PastEntryView.propTypes = {
+  viewType: PropTypes.string.isRequired,
+  entries: PropTypes.array.isRequired,
+  toggleEntry: PropTypes.func.isRequired,
+  toggleFlag: PropTypes.func.isRequired,
+}
