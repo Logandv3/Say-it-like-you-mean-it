@@ -1,0 +1,11 @@
+{
+  "method": "POST",
+  "headers": {
+    "content-type": "application/json",
+    "x-rapidapi-host": "textprobe.p.rapidapi.com",
+    "x-rapidapi-key": "901d9d0655msh1fba2dffe35295fp126567jsn97bcd09ec379"
+      },
+  "body": {
+    "text": "Facebook is the worst!  I wish they would just go away forever!"
+  }
+}
