@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import '../styles/Nav.css'
 
 const Nav = ({ wid, closeNav }) => {
@@ -18,3 +19,8 @@ const Nav = ({ wid, closeNav }) => {
 }
 
 export default Nav
+
+Nav.propTypes = {
+  wid: PropTypes.string.isRequired,
+  closeNav: PropTypes.func.isRequired
+}

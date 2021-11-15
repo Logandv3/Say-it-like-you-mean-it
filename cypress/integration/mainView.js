@@ -28,7 +28,8 @@ describe('Main View', () => {
 
     cy.intercept('https://textprobe.p.rapidapi.com/feelings', (req) => {
       req.continue((res) => {
-
+        // I didn't really find that stubbing made sense in this project (or I couldn't make sense of stubbing) because of the way a unique ID and unique
+        // response are given, combined in state, generate a unique id and url and displayed to the user.  This is an example of how I might stub I guess.  
       })
     }) 
   })
