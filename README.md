@@ -1,6 +1,7 @@
 # Say-it-like-you-mean-it
 An application for users to receive feedback regarding what type of emotions and sentiments are perceived in the things they say.  Mostly geared toward those
 who are inexperienced in professional communication. 
+<img width="1917" alt="Screen Shot 2021-11-15 at 5 44 07 PM" src="https://user-images.githubusercontent.com/81990507/141875269-ef1c6f5e-672c-4cdb-9bd5-b926f720a46f.png">
 
 
 ## Deployed Link
@@ -55,6 +56,7 @@ completely remake this app and use my backend and all hooks from the beginning s
 
 - When you are viewing past entries you can click on the flag button to add it to the flagged entries list.
 - You can also click on the main body of the card and be taken to the feedback details from that specific entry.
+![How to Use Say It Like You Mean It](https://user-images.githubusercontent.com/81990507/141875130-d2175115-6383-44b8-a757-840ff216952a.gif)
 
 
 
