@@ -1,6 +1,7 @@
 # Say-it-like-you-mean-it
 An application for users to receive feedback regarding what type of emotions and sentiments are perceived in the things they say.  Mostly geared toward those
 who are inexperienced in professional communication. 
+
 <img width="1917" alt="Screen Shot 2021-11-15 at 5 44 07 PM" src="https://user-images.githubusercontent.com/81990507/141875269-ef1c6f5e-672c-4cdb-9bd5-b926f720a46f.png">
 
 
