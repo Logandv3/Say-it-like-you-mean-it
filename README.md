@@ -45,15 +45,31 @@ completely remake this app and use my backend and all hooks from the beginning s
 
 
 ## How to Use
+- Create a title for the entry you want to analyze.
+- Enter the content you want to analyze.
+- Click the analyze button and you will soon be taken to a feedback page displaying your results.
+- Either return to main (entry form) page using the `Back to Main` link or click the open button at the top left of the page.
+- When you click the open button in the top left of the page, a navigation bar will unfold displaying other view options.
+  1. `All Entries` allows you to see every entry you have made.
+  2. `Flagged Entries` allows you to see only the entries you have flagged.
 
+- When you are viewing past entries you can click on the flag button to add it to the flagged entries list.
+- You can also click on the main body of the card and be taken to the feedback details from that specific entry.
 
 
 ## Wins
-
+- I learned a lot about the importance of planning and not changing the way you do things halfway through.
+- I learned more about using hooks.
+- I created a basic expandable navigation bar for the first time.
+- I learned more about routing and using the history without mutating it.
+- I learned how to set up a backend more efficiently, even though I did not end up using it.
 
 
 ## Challenges
-
+- Creating an app off a limited plan.  
+- Changing course multiple times part way through the process.
+- Using a class and functional components with hooks made a bit of a mess.
+- Funky asynchronous orders.
 
 
 ## Future Additions
