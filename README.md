@@ -55,6 +55,7 @@ completely remake this app and use my backend and all hooks from the beginning s
 
 - When you are viewing past entries you can click on the flag button to add it to the flagged entries list.
 - You can also click on the main body of the card and be taken to the feedback details from that specific entry.
+![How to use Say It Like You Mean It](https://user-images.githubusercontent.com/81990507/141873930-9050b887-d80c-4224-b81d-5c18dfe887eb.gif)
 
 
 ## Wins
@@ -70,6 +71,7 @@ completely remake this app and use my backend and all hooks from the beginning s
 - Changing course multiple times part way through the process.
 - Using a class and functional components with hooks made a bit of a mess.
 - Funky asynchronous orders.
+- I did not have much of a plan for specific styling other than layout.  The creative design part of my brain was off so the design leaves a lot to be desired.
 
 
 ## Future Additions
