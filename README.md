@@ -7,7 +7,7 @@ who are inexperienced in professional communication.
 
 ## Deployed Link
 
-laughable-cars.surge.sh
+Copy & paste the following link into the web browser URL bar:  laughable-cars.surge.sh
 
 ## Contributors
 - [Logan Vincent](https://github.com/Logandv3)
