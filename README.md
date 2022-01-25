@@ -7,7 +7,7 @@ who are inexperienced in professional communication.
 
 ## Deployed Link
 
-[Say It Like You Mean It](laughable-cars.surge.sh)
+[Say It Like You Mean It](https://laughable-cars.surge.sh)
 
 ## Contributors
 - [Logan Vincent](https://github.com/Logandv3)
