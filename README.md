@@ -1,6 +1,5 @@
 # Say-it-like-you-mean-it
-An application for users to receive feedback regarding what type of emotions and sentiments are perceived in the things they say.  Mostly geared toward those
-who are inexperienced in professional communication. 
+A website a user can receive feedback regarding what type of emotions and sentiments are perceived in written communications.  While anyone can benefit from improved communication [Say It Like You Mean It](https://laughable-cars.surge.sh) is primarily geared toward individuals who are inexperienced professional communicators or neurodivergent and seeking to better navigate the digital world.  [Say It Like You Mean It](https://laughable-cars.surge.sh) can help improve communication skills.  A user can input any text based(English) message and see what the underlying attributes of that message are.  User's can view past messages they have analyzed as well as flag those messages to review and study at another time. 
 
 <img width="1917" alt="Screen Shot 2021-11-15 at 5 44 07 PM" src="https://user-images.githubusercontent.com/81990507/141875269-ef1c6f5e-672c-4cdb-9bd5-b926f720a46f.png">
 
