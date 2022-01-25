@@ -21,6 +21,13 @@ who are inexperienced in professional communication.
 * Linter: eslint
 * Debugging: Chrome Dev Tools
 * Version Control/Management: Git/Github/Github Projects
+* Express.js, Knex.js and PostgreSQL were used for database storage but are currently not used in this version.
+
+
+## Learning Goals
+- Create an application demonstrating knowledge of React, React Router, Asnychronous JavaScript and end to end testing with Cypress
+- Create personas and user stories to describe the target audience
+- Work with restraints to deliver a product for a niche audience and solve a problem for them
 
 
 ## Setup
@@ -31,10 +38,18 @@ who are inexperienced in professional communication.
 - Run `npm start` and visit `localhost:3000`
 
 
-## Learning Goals
-- Create an application demonstrating knowledge of React, React Router, Asnychronous JavaScript and end to end testing with Cypress
-- Create personas and user stories to describe the target audience
-- Work with restraints to deliver a product for a niche audience and solve a problem for them
+## How to Use
+- Create a title for the entry you want to analyze.
+- Enter the content you want to analyze.
+- Click the analyze button.  It takes a bit for the analyzed response so give it a bit.  You will soon be taken to a feedback page displaying your results.
+- Either return to main (entry form) page using the `Back to Main` link or click the open button at the top left of the page.
+- When you click the open button in the top left of the page, a navigation bar will unfold displaying other view options.
+  1. `All Entries` allows you to see every entry you have made.
+  2. `Flagged Entries` allows you to see only the entries you have flagged.
+
+- When you are viewing past entries you can click on the flag button to add it to the flagged entries list.
+- You can also click on the main body of the card and be taken to the feedback details from that specific entry.
+![How to Use Say It Like You Mean It](https://user-images.githubusercontent.com/81990507/141875130-d2175115-6383-44b8-a757-840ff216952a.gif)
 
 
 ## Evolution of Say It Like You Mean It
@@ -45,21 +60,6 @@ PostgreSQL.  I got it all connected, deployed and working.  I started integratin
 user being able to post new information to the server.  I was advised to forget that and work on other functionality, which I then did.  Because I had this switch
 in focus I have kind of weird and messy implementation code that has some strange order of operations and hooks in the function components.  I would like to
 completely remake this app and use my backend and all hooks from the beginning so it is a lot cleaner.
-
-
-## How to Use
-- Create a title for the entry you want to analyze.
-- Enter the content you want to analyze.
-- Click the analyze button and you will soon be taken to a feedback page displaying your results.
-- Either return to main (entry form) page using the `Back to Main` link or click the open button at the top left of the page.
-- When you click the open button in the top left of the page, a navigation bar will unfold displaying other view options.
-  1. `All Entries` allows you to see every entry you have made.
-  2. `Flagged Entries` allows you to see only the entries you have flagged.
-
-- When you are viewing past entries you can click on the flag button to add it to the flagged entries list.
-- You can also click on the main body of the card and be taken to the feedback details from that specific entry.
-![How to Use Say It Like You Mean It](https://user-images.githubusercontent.com/81990507/141875130-d2175115-6383-44b8-a757-840ff216952a.gif)
-
 
 
 ## Wins
@@ -79,6 +79,7 @@ completely remake this app and use my backend and all hooks from the beginning s
 
 
 ## Future Additions
+- Add a loading indicator on UI to let a user know their submission is being analyzed .  Analyzation is given in the API response and it can be pretty slow.
 - Make the content input expand as the user types in it so they can see everything they have typed at once.
 - Allow the user to enter information using talk to text.
 - Use the API and server I created for this.
