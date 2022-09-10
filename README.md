@@ -8,6 +8,10 @@ A website a user can receive feedback regarding what type of emotions and sentim
 
 [Say It Like You Mean It](https://laughable-cars.surge.sh)
 
+## Link to API Back End (currently not in use)
+
+[Say It Like You Mean It Back End](https://github.com/Logandv3/say-it-like-you-mean-it-api)
+
 ## Contributors
 - [Logan Vincent](https://github.com/Logandv3)
 
